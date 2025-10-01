@@ -17,7 +17,7 @@ def load_model(model_name: str, device):
     return model
 
 
-def pKAI(pdb, model_name="pkai", device="cpu", threads=None):
+def pkai(pdb, model_name="pkai", device="cpu", threads=None):
     if threads:
         torch.set_num_threads(threads)
     model = load_model(model_name, device)
@@ -44,7 +44,7 @@ def main():
 
     args = parser.parse_args()
 
-    pKAI(args.pdb_file, model_name=args.model, device=args.device, threads=args.threads)
+    pkai(args.pdb_file, model_name=args.model, device=args.device, threads=args.threads)
 
 
 if __name__ == "__main__":

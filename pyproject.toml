@@ -25,4 +25,4 @@ dev = [
 ]
 
 [project.scripts]
-pkai = "pKAI.pKAI:main"
+pkai = "pkai.__main__"
