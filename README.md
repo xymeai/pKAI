@@ -14,19 +14,24 @@ note = {in preparation}
 
 ### Installation & Basic Usage
 
-We recommend installing pKAI on a conda enviroment. The pKAI+ model will be downloaded on the first execution and saved for subsequent runs.
+Run:
 
 ```
-python3 -m pip install pKAI
+uv sync
+uv tool install pkai
+```
 
-pKAI <pdbfile>
+Then run the tool with:
+
+```
+pkai <pdbfile>
 ```
 
 It can also be used as python function,
 ```
-from pKAI.pKAI import pKAI
+from pkai import pkai
 
-pks = pKAI(pdb)
+pks = pkai(pdb)
 ```
 where each element of the returned list is a tuple of size 4. (chain, resnumb, resname, pk)
 
