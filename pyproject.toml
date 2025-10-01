@@ -26,3 +26,9 @@ dev = [
 
 [project.scripts]
 pkai = "pkai.__main__"
+
+[[tool.uv.index]]
+name = "xyme-pypi"
+url = "https://pypi.prd.xyme.cloud/"
+publish-url = "https://pypi.prd.xyme.cloud/"
+default = true
