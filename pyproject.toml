@@ -1,0 +1,26 @@
+[build-system]
+build-backend = "setuptools.build_meta"
+requires = ["setuptools>=64.0.0", "setuptools_scm>=6.2.0"]
+
+[project]
+name = "pKAI"
+version = "1.0.0"
+description = "A fast and interpretable deep learning approach to accurate electrostatics-driven pKa prediction"
+authors = [{ name = 'Pedro B.P.S. Reis' }]
+maintainers = [{ name = 'Xyme' }]
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "pytorch-lightning",
+    "torch",
+    "torchaudio",
+    "torchvision",
+]
+
+[dependency-groups]
+dev = [
+    "setuptools-scm>=6.2.0",
+]
+
+[project.scripts]
+pkai = "pKAI.pKAI:main"
