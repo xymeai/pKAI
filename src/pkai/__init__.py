@@ -1,4 +1,4 @@
-name = "pKAI"
+name = "pkai"
 
 import os, sys
 

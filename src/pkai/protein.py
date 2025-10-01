@@ -1,4 +1,4 @@
-from residue import Residue
+from pkai.residue import Residue
 import torch
 
 PK_MODS = {
@@ -15,7 +15,6 @@ PK_MODS = {
 
 class Protein:
     def __init__(self, pdb_f):
-
         self.pdb_f = pdb_f
         self.tit_residues = {}
         self.all_residues = {}
@@ -98,7 +97,6 @@ class Protein:
         return (aname, anumb, b, resname, chain, resnumb, x, y, z, icode)
 
     def apply_cutoff(self, cutoff_dist=15):
-
         # TODO speed up by doing distance matrix a priori in cython
 
         for residue in self.iter_residues(titrable_only=True):

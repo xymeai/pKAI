@@ -1,7 +1,9 @@
 import argparse
-from os.path import dirname, isfile, abspath
-from protein import Protein
+from os.path import dirname, abspath
+
 import torch
+
+from pkai.protein import Protein
 
 
 def load_model(model_name: str, device):
@@ -15,7 +17,7 @@ def load_model(model_name: str, device):
     return model
 
 
-def pKAI(pdb, model_name="pKAI", device="cpu", threads=None):
+def pKAI(pdb, model_name="pkai", device="cpu", threads=None):
     if threads:
         torch.set_num_threads(threads)
     model = load_model(model_name, device)
@@ -26,14 +28,14 @@ def pKAI(pdb, model_name="pKAI", device="cpu", threads=None):
 
 
 def main():
-    parser = argparse.ArgumentParser(description="pKAI")
+    parser = argparse.ArgumentParser(description="pkai")
     parser.add_argument("pdb_file", type=str, help="PDB file")
     parser.add_argument(
         "--model",
         type=str,
-        choices=["pKAI", "pKAI+"],
+        choices=["pkai", "pkai+"],
         help="Number of threads to use",
-        default="pKAI",
+        default="pkai",
     )
     parser.add_argument(
         "--device", type=str, help="Device on which to run the model on", default="cpu"
