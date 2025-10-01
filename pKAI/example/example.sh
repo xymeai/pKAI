@@ -1,1 +1,0 @@
-python3 ../pKAI.py 4lzt.pdb
